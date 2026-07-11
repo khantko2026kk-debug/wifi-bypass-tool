@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+# Add current directory to path to find .so file
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    import codea
+    if __name__ == "__main__":
+        codea.main()
+except ImportError as e:
+    print(f"Error: Could not load the core module. {e}")
+    sys.exit(1)
+except Exception as e:
+    print(f"An error occurred: {e}")
+    sys.exit(1)
